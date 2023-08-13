@@ -4,10 +4,26 @@
 https://github.com/chetan-code/ChessOnline/assets/57151493/b3f3f125-d328-456a-a91b-4a31b46ea308
 
 How it works :
-Chessboard Class :
+## Chessboard Class
 
-The Chessboard class manages a chess game's core mechanics. It handles board creation, piece positioning, and movement. Enumerations define teams and special moves. Tiles are generated as GameObjects with materials and scripts. Pieces (rooks, knights, etc.) are spawned, positioned, and moved via raycasting and lerping. Special moves like EnPassant, Castling, and Promotion are supported. Multiplayer elements include team management and turn handling. Dead pieces are displayed on the side. This class forms a fundamental part of a Unity-based chess game, offering gameplay essentials like piece interactions, move validation, and special move execution.
+The **Chessboard class** serves as the backbone of this chess game project on Unity. It encompasses a range of functionalities crucial for the game's mechanics and gameplay. Here's how it works:
 
-The code includes methods for simulating piece movements, checking for checkmate scenarios, highlighting valid moves, handling UI components for victory and rematch, and managing network interactions for both local and remote multiplayer experiences. The project employs a 2D array to represent the chessboard and tracks the positions of chess pieces. The code is organized into several sections, each catering to specific functionalities such as game logic, UI handling, and networking. It offers a clear structure for understanding game mechanics, multiplayer interactions, and user interface design in a Chess gaming context.
+### Core Mechanics Management
+The Chessboard class is responsible for handling key game mechanics such as creating the chessboard, positioning and moving pieces, and managing teams and turns. It utilizes enumerations to define teams and special moves, providing a structured foundation for gameplay.
 
-- I know this class could have been divided into several other classes - as it handles mutliple reponsibilty at this point namely - chess core mechanics, UI handling  and networking.
+### Board Visualization
+The class generates the chessboard as a grid of GameObjects, each representing a tile. These tiles are enhanced with materials and scripts to facilitate interactions and highlighting of valid moves.
+
+### Piece Interactions
+Pieces, including rooks, knights, and more, are spawned, positioned, and moved using techniques like raycasting and lerping. The class supports various special moves like En Passant, Castling, and Promotion, adding depth and complexity to the gameplay.
+
+### Multiplayer Integration
+For multiplayer experiences, the Chessboard class manages team assignments and handles turn-based gameplay. It coordinates player actions and ensures a smooth experience for both local and remote multiplayer scenarios.
+
+### UI Components and Victory
+The class handles UI components for victory screens and rematch functionality. It triggers the display of victory screens based on the winning team and allows players to request a rematch.
+
+### Code Organization
+The codebase is structured into distinct sections, each catering to specific functionalities. This includes segments for game logic, UI management, and networking interactions. Despite handling multiple responsibilities, the code maintains clarity by separating concerns and offering a coherent structure.
+
+The Chessboard class plays a pivotal role in this Unity-based chess game. It seamlessly integrates core mechanics, user interface, and multiplayer interactions, providing a holistic gaming experience that encompasses both intricate chess strategies and engaging gameplay dynamics.
