@@ -26,7 +26,7 @@ The class handles UI components for victory screens and rematch functionality. I
 ### Code Organization
 The codebase is structured into distinct sections, each catering to specific functionalities. This includes segments for game logic, UI management, and networking interactions. Despite handling multiple responsibilities, the code maintains clarity by separating concerns and offering a coherent structure.
 
-The Chessboard class plays a pivotal role in this Unity-based chess game. It seamlessly integrates core mechanics, user interface, and multiplayer interactions, providing a holistic gaming experience that encompasses both intricate chess strategies and engaging gameplay dynamics.
+The Chessboard class plays a pivotal role in this Unity-based chess game. It seamlessly integrates core mechanics, user interface, and multiplayer interactions.
 
 ## ChessPiece Class
 
@@ -39,8 +39,6 @@ The **ChessPiece class** represents individual chess pieces in the game. Each pi
 - Smooth selection and deselection animations.
 - Position and scale lerping for visual transitions.
 
-The ChessPiece class plays a pivotal role in defining the attributes and behaviors of individual chess pieces, enriching the game's strategic and visual aspects.
-
 ## Queen Class
 NOTE : You can look into movements of all individual pieces.
 
@@ -51,5 +49,3 @@ The **Queen class** extends the ChessPiece class to define the behavior of the q
 - Calculates available moves in multiple directions.
 - Handles obstacles, enemy pieces, and board boundaries.
 - Enhances strategic depth and diversity of piece behaviors.
-
-The Queen class enriches the game by implementing the versatile movement capabilities of the queen chess piece, contributing to the engaging and dynamic gameplay of the Unity-based chess game.
