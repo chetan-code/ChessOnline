@@ -79,3 +79,31 @@ The class also showcases robust event handling mechanisms. It registers for the 
 
 The class implements a singleton pattern through the `Instance` property, ensuring only one instance of the client exists at any given time.
 
+## Server Class
+
+The `Server` class is a pivotal component of the multiplayer functionality, acting as the game's host and facilitating communication between clients. Leveraging Unity's Networking Transport package, this class establishes, manages, and interacts with client connections.
+
+### Initialization and Connection Handling
+
+The `Init` method initializes the server by creating a network driver and binding it to an endpoint. This endpoint comprises essential information such as IP address and port, enabling the driver to listen for incoming connections. The driver subsequently enters a listening state, awaiting connections from clients. The server maintains a native list of connections to effectively manage participants in the multiplayer game.
+
+### Update and Event Handling
+
+The `Update` method serves as the heart of the server's operations. It regularly updates the driver's state, handles events, and ensures seamless data exchange between clients and the server. The method includes a comprehensive event processing system, handling data reception, new connections, and disconnections.
+
+### Connection Management
+
+The class employs the `CleanupConnections` method to remove stale or disconnected connections from the list. It uses the `AcceptNewConnections` method to accept new client connections, dynamically adding them to the list of active connections.
+
+### Broadcast and Data Transmission
+
+The server includes the capability to broadcast messages to all connected clients through the `Broadcast` method. It serializes and transmits data to individual clients using the `SendToClient` method, ensuring efficient data exchange over the network.
+
+### Keep-Alive Mechanism
+
+The class integrates a keep-alive mechanism to monitor client connections' health. It periodically sends a "keep-alive" message to clients to confirm their presence and responsiveness. This mechanism enhances the reliability of the server-client interaction.
+
+### Singleton Structure
+
+The class implements a singleton pattern using the `Instance` property, ensuring only one instance of the server is active at a time.
+
