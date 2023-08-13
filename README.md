@@ -49,3 +49,33 @@ The **Queen class** extends the ChessPiece class to define the behavior of the q
 - Calculates available moves in multiple directions.
 - Handles obstacles, enemy pieces, and board boundaries.
 - Enhances strategic depth and diversity of piece behaviors.
+
+# Networking 
+## Client Class
+
+The `Client` class forms an essential part of the multiplayer infrastructure, facilitating communication between players and the game server. It employs Unity's Networking Transport package to establish and maintain connections. The class follows a singleton pattern, ensuring a single active client instance throughout the game. 
+
+### Initialization and Connection
+
+The `Init` method initializes the client by creating a network driver and attempting a connection to the specified server endpoint (IP address and port). This process is crucial for enabling multiplayer interactions.
+
+### Update and Message Processing
+
+The `Update` method continuously updates the driver to manage connection state and events. It ensures that data is efficiently sent and received between the client and server. The method includes detailed event handling logic, such as identifying connection events, data reception, and disconnection from the server.
+
+### Health Monitoring
+
+The class monitors the health of the connection through the `CheckAlive` method. If the connection is lost unexpectedly, it triggers the `ConnectionDropped` event and shuts down the client.
+
+### Sending and Receiving Data
+
+The `SendToServer` method facilitates the sending of network messages to the server. It serializes the message and sends it using the network driver.
+
+### Event Handling
+
+The class also showcases robust event handling mechanisms. It registers for the `KEEP_ALIVE` event, a ping-pong mechanism between the client and server that ensures both sides remain connected and responsive. The event handling system enhances modularity and readability.
+
+### Singleton Structure
+
+The class implements a singleton pattern through the `Instance` property, ensuring only one instance of the client exists at any given time.
+
