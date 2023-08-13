@@ -51,6 +51,8 @@ The **Queen class** extends the ChessPiece class to define the behavior of the q
 - Enhances strategic depth and diversity of piece behaviors.
 
 # Networking 
+![puml](https://github.com/chetan-code/ChessOnline/assets/57151493/1a268e4c-9027-4e8b-b392-a1bb9578e130)
+
 ## Client Class
 
 The `Client` class forms an essential part of the multiplayer infrastructure, facilitating communication between players and the game server. It employs Unity's Networking Transport package to establish and maintain connections. The class follows a singleton pattern, ensuring a single active client instance throughout the game. 
