@@ -109,3 +109,29 @@ The class integrates a keep-alive mechanism to monitor client connections' healt
 
 The class implements a singleton pattern using the `Instance` property, ensuring only one instance of the server is active at a time.
 
+## NetMessage Class
+
+The `NetMessage` class is a base class for data messages transmitted between the client and the server in a networked application. It serves as a foundation for creating specific message types that can be sent and received by networked entities. Each `NetMessage` instance includes an `OperationCode` that defines the type of operation or message it represents.
+
+### Properties
+
+- `Code`: An `OperationCode` property that represents the type of operation or message associated with the `NetMessage`. It is used for identifying the purpose of the message.
+
+### Methods
+
+- `Serialize(ref DataStreamWriter writer)`: This method is responsible for serializing the data contained within the `NetMessage` instance into a format that can be sent over the network. It uses a `DataStreamWriter` to write the serialized data, including the `OperationCode`.
+
+- `Deserialize(DataStreamReader reader)`: This method is used to deserialize data received from the network back into a `NetMessage` instance. It is implemented in subclasses and is responsible for reading any additional serialized data.
+
+- `ReceiveOnClient()`: This method is invoked on the client-side when a `NetMessage` is received from the server. It can be overridden in subclasses to handle the specific behavior associated with processing the received message on the client.
+
+- `ReceiveOnServer(NetworkConnection clientConnection)`: This method is invoked on the server-side when a `NetMessage` is received from a client. The `clientConnection` parameter identifies the client that sent the message. It can be overridden in subclasses to handle the specific behavior associated with processing the received message on the server.
+
+### Usage
+
+The `NetMessage` class is intended to be subclassed to create specific message types tailored to the needs of the networked application. Subclasses can define additional properties and methods to represent the specific data and behavior associated with different message types. By providing serialization and deserialization methods, as well as receive methods for both client and server, the `NetMessage` class facilitates communication between networked entities.
+
+It's important to note that this class acts as a foundation and should not be directly instantiated. Instead, create subclasses that extend `NetMessage` to define and handle distinct message types.
+
+
+
