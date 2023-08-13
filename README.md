@@ -41,3 +41,14 @@ The **ChessPiece class** represents individual chess pieces in the game. Each pi
 
 The ChessPiece class plays a pivotal role in defining the attributes and behaviors of individual chess pieces, enriching the game's strategic and visual aspects.
 
+## Queen Class
+NOTE : You can look into movements of all individual pieces.
+The **Queen class** extends the ChessPiece class to define the behavior of the queen chess piece in the game. The class determines the available moves for the queen on the chessboard, combining the movement patterns of both rooks and bishops. It calculates and adds valid positions to the list of moves for the queen. The code segment showcases the implementation of movement logic in various directions (up, down, left, right, diagonally), considering obstacles, enemy pieces, and board boundaries. The Queen class plays a crucial role in contributing to the diversity of piece behaviors and strategic possibilities within the Unity-based chess game.
+
+### Key Features:
+- Movement patterns of both rooks and bishops combined.
+- Calculates available moves in multiple directions.
+- Handles obstacles, enemy pieces, and board boundaries.
+- Enhances strategic depth and diversity of piece behaviors.
+
+The Queen class enriches the game by implementing the versatile movement capabilities of the queen chess piece, contributing to the engaging and dynamic gameplay of the Unity-based chess game.
