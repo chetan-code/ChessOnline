@@ -27,3 +27,17 @@ The class handles UI components for victory screens and rematch functionality. I
 The codebase is structured into distinct sections, each catering to specific functionalities. This includes segments for game logic, UI management, and networking interactions. Despite handling multiple responsibilities, the code maintains clarity by separating concerns and offering a coherent structure.
 
 The Chessboard class plays a pivotal role in this Unity-based chess game. It seamlessly integrates core mechanics, user interface, and multiplayer interactions, providing a holistic gaming experience that encompasses both intricate chess strategies and engaging gameplay dynamics.
+
+## ChessPiece Class
+
+The **ChessPiece class** represents individual chess pieces in the game. Each piece is associated with a team and type (pawn, rook, knight, bishop, queen, king). The class provides methods for obtaining available moves based on the current board configuration and supports special moves such as en passant, promotion, and castling. Chess pieces can be selected and deselected, triggering smooth animations. The class incorporates position and scale lerping for seamless transitions. It serves as a fundamental building block for creating and managing diverse chess piece behaviors within the Unity-based chess game.
+
+### Key Features:
+- Piece types: Pawn, Rook, Knight, Bishop, Queen, King.
+- Available move calculation based on the current board.
+- Support for special moves: en passant, promotion, castling.
+- Smooth selection and deselection animations.
+- Position and scale lerping for visual transitions.
+
+The ChessPiece class plays a pivotal role in defining the attributes and behaviors of individual chess pieces, enriching the game's strategic and visual aspects.
+
