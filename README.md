@@ -134,4 +134,33 @@ The `NetMessage` class is intended to be subclassed to create specific message t
 It's important to note that this class acts as a foundation and should not be directly instantiated. Instead, create subclasses that extend `NetMessage` to define and handle distinct message types.
 
 
+## NetMakeMove Class
+
+The `NetMakeMove` class represents a specific type of network message used to convey chess move information between the client and the server. This message is used to communicate details about a chess piece's movement on the board, including its original and destination positions, as well as the team identifier.
+
+### Properties
+
+- `originalX`: An integer property representing the X-coordinate of the original position of the chess piece.
+- `originalY`: An integer property representing the Y-coordinate of the original position of the chess piece.
+- `destinationX`: An integer property representing the X-coordinate of the destination position of the chess piece.
+- `destinationY`: An integer property representing the Y-coordinate of the destination position of the chess piece.
+- `teamId`: An integer property representing the team identifier associated with the chess piece making the move.
+
+### Constructors
+
+- `NetMakeMove()`: A constructor that initializes the `Code` property to the appropriate operation code for making a move.
+- `NetMakeMove(DataStreamReader reader)`: A constructor that initializes the `Code` property and deserializes the received data from a `DataStreamReader`.
+
+### Methods
+
+- `Serialize(ref DataStreamWriter writer)`: This method serializes the data within the `NetMakeMove` instance into a format suitable for network transmission. It includes the operation code and chess move details.
+- `Deserialize(DataStreamReader reader)`: This method deserializes the received data from a `DataReaderStream` back into a `NetMakeMove` instance, extracting the chess move details.
+- `ReceiveOnClient()`: This method is invoked on the client-side when a `NetMakeMove` message is received from the server. It triggers an event (`NetUtility.C_MAKE_MOVE`) to handle the received move details.
+- `ReceiveOnServer(NetworkConnection clientConnection)`: This method is invoked on the server-side when a `NetMakeMove` message is received from a client. It triggers an event (`NetUtility.S_MAKE_MOVE`) to handle the received move details, including the associated client connection.
+
+### Usage
+
+The `NetMakeMove` class is an example of a specialized network message type designed to facilitate communication of chess move information between the client and server. It includes methods for serialization, deserialization, and handling of received data. This class is designed to be used within a broader networked chess application, where it plays a crucial role in updating the game state across the network.
+
+To utilize the `NetMakeMove` class, create instances of it to represent chess move data and use its serialization methods to send data to the network. Register event handlers to the `C_MAKE_MOVE` and `S_MAKE_MOVE` events in the `NetUtility` class to respond to these move messages appropriately on both client and server sides.
 
