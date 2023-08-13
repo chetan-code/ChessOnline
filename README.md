@@ -164,3 +164,42 @@ The `NetMakeMove` class is an example of a specialized network message type desi
 
 To utilize the `NetMakeMove` class, create instances of it to represent chess move data and use its serialization methods to send data to the network. Register event handlers to the `C_MAKE_MOVE` and `S_MAKE_MOVE` events in the `NetUtility` class to respond to these move messages appropriately on both client and server sides.
 
+
+## NetUtility Class
+
+The `NetUtility` class serves as a critical component in managing network communication between the client and server within a networked chess game. It defines an enum for categorizing various types of messages and provides event handlers to manage the processing of these messages on both the client and server sides.
+
+### Enums
+
+- `OperationCode`: Enumerates operation codes that represent different types of network messages, including `KEEP_ALIVE`, `WELCOME`, `START_GAME`, `MAKE_MOVE`, and `REMATCH`. These codes are crucial for identifying the nature of incoming and outgoing messages.
+
+### Event Handlers
+
+The `NetUtility` class offers a set of event handlers that are triggered upon receiving specific types of network messages:
+
+#### Client-Side Event Handlers:
+
+- `C_KEEP_ALIVE`: Triggered upon receiving a `NetKeepAlive` message on the client side.
+- `C_WELCOME`: Triggered upon receiving a `NetWelcome` message on the client side.
+- `C_START_GAME`: Triggered upon receiving a `NetStartGame` message on the client side.
+- `C_MAKE_MOVE`: Triggered upon receiving a `NetMakeMove` message on the client side.
+- `C_REMATCH`: Triggered upon receiving a `NetRematch` message on the client side (not currently implemented).
+
+#### Server-Side Event Handlers:
+
+- `S_KEEP_ALIVE`: Triggered upon receiving a `NetKeepAlive` message on the server side. Includes the relevant client connection.
+- `S_WELCOME`: Triggered upon receiving a `NetWelcome` message on the server side. Includes the relevant client connection.
+- `S_START_GAME`: Triggered upon receiving a `NetStartGame` message on the server side. Includes the relevant client connection.
+- `S_MAKE_MOVE`: Triggered upon receiving a `NetMakeMove` message on the server side. Includes the relevant client connection.
+- `S_REMATCH`: Triggered upon receiving a `NetRematch` message on the server side (not currently implemented). Includes the relevant client connection.
+
+### Methods
+
+- `OnData(DataStreamReader stream, NetworkConnection connection, Server server = null)`: This method reads and processes incoming network data. It accepts a `DataStreamReader` for reading data, a `NetworkConnection` representing the client connection, and an optional `Server` instance (used when reading data on the server side). The method uses the operation code to determine the message type and invokes the appropriate event handler.
+
+### Usage
+
+The `NetUtility` class acts as a central hub for processing incoming network messages based on their operation codes. It deciphers the operation code from received data and directs the message to the corresponding event handler. This class works in conjunction with specific message classes (e.g., `NetKeepAlive`, `NetWelcome`, etc.) to facilitate communication between the client and server within a networked chess game.
+
+To employ the `NetUtility` class, register event handlers for the relevant events on both the client and server sides. Upon data reception, the `OnData` method decodes the operation code and triggers the relevant event handler to manage the message content, whether on the client or server side.
+
