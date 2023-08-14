@@ -42,6 +42,9 @@ The **ChessPiece class** represents individual chess pieces in the game. Each pi
 ## Queen Class
 NOTE : You can look into movements of all individual pieces.
 
+https://github.com/chetan-code/ChessOnline/assets/57151493/1bc4139c-628f-417f-bdf3-1687d1dd31e8
+
+
 The **Queen class** extends the ChessPiece class to define the behavior of the queen chess piece in the game. The class determines the available moves for the queen on the chessboard, combining the movement patterns of both rooks and bishops. It calculates and adds valid positions to the list of moves for the queen. The code segment showcases the implementation of movement logic in various directions (up, down, left, right, diagonally), considering obstacles, enemy pieces, and board boundaries.
 
 ### Key Features:
