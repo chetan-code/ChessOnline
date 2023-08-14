@@ -1,9 +1,8 @@
 # ChessOnline
 
-
+#### Code is well commented - for better understanding!!
 https://github.com/chetan-code/ChessOnline/assets/57151493/b3f3f125-d328-456a-a91b-4a31b46ea308
 
-How it works :
 ## Chessboard Class
 
 The **Chessboard class** serves as the backbone of this chess game project on Unity. It encompasses a range of functionalities crucial for the game's mechanics and gameplay. Here's how it works:
@@ -47,7 +46,7 @@ https://github.com/chetan-code/ChessOnline/assets/57151493/1bc4139c-628f-417f-bd
 
 The **Queen class** extends the ChessPiece class to define the behavior of the queen chess piece in the game. The class determines the available moves for the queen on the chessboard, combining the movement patterns of both rooks and bishops. It calculates and adds valid positions to the list of moves for the queen. The code segment showcases the implementation of movement logic in various directions (up, down, left, right, diagonally), considering obstacles, enemy pieces, and board boundaries.
 
-### Key Features:
+#### Key Features:
 - Movement patterns of both rooks and bishops combined.
 - Calculates available moves in multiple directions.
 - Handles obstacles, enemy pieces, and board boundaries.
