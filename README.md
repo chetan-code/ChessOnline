@@ -32,7 +32,7 @@ The Chessboard class plays a pivotal role in this Unity-based chess game. It sea
 
 The **ChessPiece class** represents individual chess pieces in the game. Each piece is associated with a team and type (pawn, rook, knight, bishop, queen, king). The class provides methods for obtaining available moves based on the current board configuration and supports special moves such as en passant, promotion, and castling. Chess pieces can be selected and deselected, triggering smooth animations. The class incorporates position and scale lerping for seamless transitions. It serves as a fundamental building block for creating and managing diverse chess piece behaviors within the Unity-based chess game.
 
-### Key Features:
+#### Key Features:
 - Piece types: Pawn, Rook, Knight, Bishop, Queen, King.
 - Available move calculation based on the current board.
 - Support for special moves: en passant, promotion, castling.
